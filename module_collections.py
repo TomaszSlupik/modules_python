@@ -241,4 +241,63 @@ print (final)
 
 print('---')
 
-# 
+# podstawowe dane o utworzonych obiektach
+Student = collections.namedtuple(typename='Student', field_names=['name', 'age', 'specialization'])
+
+studentOne = Student('Mike', 21, 'physics')
+studentTwo = Student('Kate', 20, 'mathematics')
+studentThree = Student('Bob', 21, 'information technology')
+
+students = [studentOne, studentTwo, studentThree]
+
+for name in students:
+    print(f"{name.name} : {name.age}: {name.specialization}")
+
+print('---')
+
+# Posortuj listę po wieku (atrybut age) rosnąco
+People = collections.namedtuple(typename='People', field_names=['name', 'age', 'education'])
+
+peopleOne = People('Mike', 21, 'physics')
+peopleTwo = People('Mark', 22, 'biology')
+peopleThree = People('Kate', 20, 'mathematics')
+peopleFour = People('Bob', 21, 'information technology')
+
+peoples = [peopleOne, peopleTwo, peopleThree, peopleFour]
+
+peoples.sort(key=lambda x: x.age, reverse=False)
+
+print(peoples)
+
+print('---')
+# Wydrukuj każdy jej element do konsoli.
+
+Human = collections.namedtuple(typename='Human', field_names=['name', 'age', 'specialization'])
+
+humanOne = {
+    'name': 'Kate',
+    'age': 20,
+    'specialization': 'mathematics',
+}
+
+humanTwo = {
+    'name': 'Mike', 
+    'age': 21, 
+    'specialization': 'physics'
+}
+
+humanThree = {
+    'name': 'Bob',
+    'age': 21,
+    'specialization': 'information technology',
+}
+
+h1 = Human(humanOne['name'], humanOne['age'], humanOne['specialization'])
+h2 = Human(humanTwo['name'], humanTwo['age'], humanTwo['specialization'])
+h3 = Human(humanThree['name'], humanThree['age'], humanThree['specialization'])
+
+print(h1)
+print(h2)
+print(h3)
+
+print('---')
